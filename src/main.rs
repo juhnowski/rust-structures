@@ -18,6 +18,14 @@ fn main() {
     print_user(&user1);
     print_user(&user2);
 
+    let user3 = User {
+        username:   String::from("ilya"),
+        email:      String::from("ilya@xyz.com"),
+        ..user1
+    };
+
+    print_user(&user3);
+
     fn build(username: String, email:String) -> User {
             User{
                 username,
