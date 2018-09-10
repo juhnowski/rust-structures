@@ -13,5 +13,21 @@ fn main() {
         active: true,
     };
 
-    println!("username={} email={} sign_in={} active={}", user1.username, user1.email, user1.sign_in_count,user1.active);
+    let user2 = build(String::from("user"), String::from("password"));
+
+    print_user(&user1);
+    print_user(&user2);
+
+    fn build(username: String, email:String) -> User {
+            User{
+                username,
+                email,
+                sign_in_count: 1,
+                active: true,
+            }
+    };
+
+    fn print_user(user: &User){
+        println!("username={} email={} sign_in={} active={}", user.username, user.email, user.sign_in_count,user.active);
+    }
 }
